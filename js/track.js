@@ -1,25 +1,23 @@
-const quizform = document.querySelector(".quiz-form");
-const submitBtn = document.querySelector("#submit-answers-btn");
-const outputEl = document.querySelector(".output");
+const outerradiusOfcircle=document.querySelector("#radius1");
+const innerradiusOfcircle=document.querySelector("#radius2");
+const calculate = document.querySelector("#calculate-area");
+const output = document.querySelector("#output");
 
-const correctAnswers = [
-  "diameter",
-  "chord",
-  "radius",
-  "2r",
-  "2πr",
-];
-
-function calculateScore() {
-  const formResults = new FormData(quizform);
-  let score = 0,
-    index = 0;
-  for (let value of formResults.values()) {
-    if (value === correctAnswers[index]) {
-      score = score + 1;
-    }
-    index = index + 1;
+function calculateAreaoftrack(e) {
+  e.preventDefault();
+  const OuterRadiusOfcircle= Number(outerradiusOfcircle.value);
+  const InnerRadiusOfcircle= Number(innerradiusOfcircle.value);
+  if (
+    InnerRadiusOfcircle >0 &&
+    OuterRadiusOfcircle>0 &&
+    OuterRadiusOfcircle>InnerRadiusOfcircle
+  ) {
+    const result =Math.round(22/7*((OuterRadiusOfcircle)^2-(InnerRadiusOfcircle)^2));
+    output.innerText = `Area of Circle is ${result} sq units`;
+  } else {
+    output.innerText = "Enter a valid radii";
   }
-  outputEl.innerText = "The score is " + score;
 }
-submitBtn.addEventListener("click", calculateScore);
+calculate.addEventListener("submit", calculateArea);
+
+
