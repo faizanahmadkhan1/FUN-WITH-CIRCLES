@@ -114,3 +114,11 @@ footer p {
 }
 
 
+a,
+
+li {
+  display: inline;
+  color: #fff;
+}
+
+}
