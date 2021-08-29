@@ -7,17 +7,19 @@ function calculateAreaoftrack(e) {
   e.preventDefault();
   const OuterRadiusOfcircle= Number(outerradiusOfcircle.value);
   const InnerRadiusOfcircle= Number(innerradiusOfcircle.value);
+  console.log(OuterRadiusOfcircle);
+  console.log(InnerRadiusOfcircle);
   if (
     InnerRadiusOfcircle >0 &&
     OuterRadiusOfcircle>0 &&
     OuterRadiusOfcircle>InnerRadiusOfcircle
   ) {
-    const result =Math.round(22/7*((OuterRadiusOfcircle)^2-(InnerRadiusOfcircle)^2));
-    output.innerText = `Area of Circle is ${result} sq units`;
+    const result =Math.round(22/7*((OuterRadiusOfcircle*OuterRadiusOfcircle)-(InnerRadiusOfcircle*InnerRadiusOfcircle)));
+    output.innerText = `Area of Circular Track is ${result} sq units`;
   } else {
     output.innerText = "Enter a valid radii";
   }
 }
-calculate.addEventListener("submit", calculateArea);
+calculate.addEventListener("submit", calculateAreaoftrack);
 
 

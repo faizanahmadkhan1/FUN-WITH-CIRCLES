@@ -113,18 +113,4 @@ footer p {
   text-align: center;
 }
 
-.footer-list {
-  margin: 1rem;
-}
 
-a,
-img,
-li {
-  display: inline;
-  color: #fff;
-}
-
-img {
-  width: 40px;
-  padding: 1rem 0.2rem;
-}
